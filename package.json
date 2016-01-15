@@ -1,0 +1,32 @@
+{
+  "author": {
+    "name": "Simon Pelczer",
+    "email": "simonpelczer@web.de"
+  },
+  "license": "MIT",
+  "bin": {
+    "node-api-mocker": "index.js"
+  },
+  "bugs": "https://github.com/Templum/node-api-mocker/issues",
+  "dependencies": {
+    "body-parser": "1.8.1",
+    "express": "4.9.0"
+  },
+  "description": "node-api-mocker",
+  "devDependencies": {
+    "mocha": "2.3.4",
+    "should": "8.1.1",
+    "supertest": "1.1.0"
+  },
+  "main": "index",
+  "name": "node-api-mocker",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Templum/node-api-mocker"
+  },
+  "scripts": {
+    "test": "mocha -R spec tests/*.js"
+  },
+  "version": "0.0.1"
+}
