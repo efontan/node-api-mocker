@@ -1,10 +1,10 @@
 var should = require('should')
-    , request = require('supertest')
-    , start = require('../index')
-    , config = require('../fixtures/server_conf')
+var request = require('supertest')
+var start = require('../index')
+var config = require('../config.json')
 
-    , configToString = JSON.stringify(config, null, 4)
-    , app = undefined
+var configString = JSON.stringify(config, null, 4)
+var app = undefined
 
 
 describe('rest_server_mock tests with configuration: ' + configToString, function () {

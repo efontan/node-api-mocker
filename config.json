@@ -1,0 +1,28 @@
+{
+  "port": 3001,
+  "responsePath": "fullPathToFolderWhichContainsResponses",
+
+  "paths": [
+    {
+      "method": "GET",
+      "path": "/user/:variable/find",
+      "successResponse": 
+      {
+        "filename": "success.json",
+        "status": 200
+      },
+      "errorResponses": [
+        {
+          "filename": "error.json",
+          "status": 400
+        },
+        {
+          "filename": "extraError.json",
+          "status": 400
+        }
+
+      ]
+    }
+  ]
+}
+
