@@ -16,18 +16,24 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Content Include=".travis.yml" />
+    <Content Include="configuration_test\responses\error.json" />
+    <Content Include="configuration_test\responses\extraError.json" />
+    <Content Include="configuration_test\responses\success.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Compile Include="index.js" />
     <Compile Include="constants\contstants.js" />
-    <Content Include="config.json" />
+    <Content Include="configuration_test\config.json" />
     <Compile Include="lib\schemaValidator.js" />
     <Compile Include="lib\controller.js" />
-    <Compile Include="tests\rest_server_test.js" />
+    <Compile Include="tests\serverTest.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="configuration_test\responses\" />
     <Folder Include="constants" />
     <Folder Include="lib" />
+    <Folder Include="configuration_test\" />
     <Folder Include="tests" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

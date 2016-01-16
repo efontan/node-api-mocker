@@ -1,0 +1,83 @@
+{
+  "port": 3001,
+  "responsePath": "fullPathToFolderWhichContainsResponses",
+  "requestFailQuote" :  50,
+
+  "paths": [
+    {
+      "method": "GET",
+      "path": "/user/:variable/find",
+      "successResponse": {
+        "filename": "success.json",
+        "status": 200
+      },
+      "errorResponses": [
+        {
+          "filename": "error.json",
+          "status": 400
+        },
+        {
+          "filename": "extraError.json",
+          "status": 400
+        }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/user/:variable/find",
+      "successResponse": {
+        "filename": "success.json",
+        "status": 200
+      },
+      "errorResponses": [
+        {
+          "filename": "error.json",
+          "status": 400
+        },
+        {
+          "filename": "extraError.json",
+          "status": 400
+        }
+
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/user/:variable/find",
+      "successResponse": {
+        "filename": "",
+        "status": 201
+      },
+      "errorResponses": [
+        {
+          "filename": "error.json",
+          "status": 400
+        },
+        {
+          "filename": "extraError.json",
+          "status": 400
+        }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/user/:variable/find",
+      "successResponse": {
+        "filename": "success.json",
+        "status": 200
+      },
+      "errorResponses": [
+        {
+          "filename": "error.json",
+          "status": 400
+        },
+        {
+          "filename": "extraError.json",
+          "status": 400
+        }
+
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,5 @@
+﻿{
+  "success": false,
+  "errors": ["com.templum.error.test"],
+  "result": "Hello World"
+}
