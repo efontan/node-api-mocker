@@ -27,14 +27,14 @@
     <Content Include="configuration_test\config.json" />
     <Compile Include="lib\schemaValidator.js" />
     <Compile Include="lib\controller.js" />
-    <Compile Include="tests\serverTest.js" />
+    <Compile Include="test\serverTest.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="configuration_test\responses\" />
     <Folder Include="constants" />
     <Folder Include="lib" />
     <Folder Include="configuration_test\" />
-    <Folder Include="tests" />
+    <Folder Include="test\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
