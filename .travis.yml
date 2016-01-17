@@ -2,10 +2,11 @@
 node_js:
   - "4.1"
   - "4.0"
-before_install:
-  - npm install -g mocha
-  - npm -g install npm@latest
-  - echo "Installed mocha"
+install:
+ - npm install -g mocha-phantomjs
+ - npm install
+ - npm -g install npm@latest
+
 notifications:
   email:
     recipients:

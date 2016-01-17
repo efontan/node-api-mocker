@@ -1,5 +1,7 @@
-﻿{
-  "success": false,
-  "errors": [ "com.templum.error.extra.test" ],
-  "result": "Hello World"
+{
+   "success":false,
+   "errors":[
+      "com.templum.error.extra.test"
+   ],
+   "result":"Hello World"
 }

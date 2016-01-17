@@ -1,7 +1,7 @@
 {
   "port": 3001,
-  "responsePath": "fullPathToFolderWhichContainsResponses",
-  "requestFailQuote" :  50,
+  "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\",
+  "requestFailQuote": 50,
 
   "paths": [
     {
@@ -80,4 +80,3 @@
     }
   ]
 }
-

@@ -27,7 +27,7 @@
     <Content Include="configuration_test\config.json" />
     <Compile Include="lib\schemaValidator.js" />
     <Compile Include="lib\controller.js" />
-    <Compile Include="test\serverTest.js" />
+    <Compile Include="test\server.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="configuration_test\responses\" />

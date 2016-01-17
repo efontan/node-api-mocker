@@ -1,5 +1,7 @@
-﻿{
-  "success": true,
-  "errors": [ ],
-  "result": "Hello World"
+{
+   "success":true,
+   "errors":[
+
+   ],
+   "result":"Hello World"
 }
