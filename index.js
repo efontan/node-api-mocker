@@ -37,7 +37,7 @@ function start(configFile, callback) {
 }
 
 function startAsCmd() {
-    if (process.argv.length !== 3) console.log('Example Usage: node node node-api-mocker path_to_config_file'); //TODO: Make Class with static content to send 
+    if (process.argv.length !== 3) console.log('Example Usage: node node-api-mocker path_to_config_file'); //TODO: Make Class with static content to send 
     else start(process.argv[2], function (err, server) {
         if (err) console.log(err);
         console.log('Node-Api-Mocker is listening on port: ', server.address().port);

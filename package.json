@@ -12,7 +12,7 @@
     "body-parser": "1.8.1",
     "express": "4.9.0"
   },
-  "description": "node-api-mocker is an mocking server for rest api's. you can mock an api and also include error responses and configurate a failure number for the request.",
+  "description": "Node-Api-Mocker is for mocking REST API's, which the name allready sugest. There fore you can configure paths and the returning responses and also the errors.",
   "keywords": ["REST", "API MOCKING", "REST API", "MOCKUP SERVER",  "DEVELOPMENT"],
   "devDependencies": {
     "mocha": "2.3.4",
