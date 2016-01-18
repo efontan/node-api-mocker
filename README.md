@@ -23,7 +23,7 @@ You have the following two options to use the application. Both uses the same co
 ``` $node node-api-mocker path_to_config_file ```
 #### As Require:
 ```javascript
-var mockServer = require('node-api-mocker);
+var mockServer = require('node-api-mocker');
 
 mockServer('path_to_config_file', function(err, server){
 if(err) //Server was not started
