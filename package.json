@@ -12,7 +12,8 @@
     "body-parser": "1.8.1",
     "express": "4.9.0"
   },
-  "description": "node-api-mocker",
+  "description": "node-api-mocker is an mocking server for rest api's. you can mock an api and also include error responses and configurate a failure number for the request.",
+  "keywords": ["REST", "API MOCKING", "REST API", "MOCKUP SERVER",  "DEVELOPMENT"],
   "devDependencies": {
     "mocha": "2.3.4",
     "should": "8.1.1",
@@ -20,7 +21,7 @@
   },
   "main": "index",
   "name": "node-api-mocker",
-  "private": true,
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/Templum/node-api-mocker"
@@ -28,5 +29,5 @@
   "scripts": {
     "test": "mocha -R spec"
   },
-  "version": "0.0.1"
+  "version": "0.0.3"
 }
