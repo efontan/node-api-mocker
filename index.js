@@ -1,15 +1,16 @@
 #! /usr/bin/env node
 
 /** Importing needed Modules **/
-var express = require('express')
+var express = require('express');
 var fs = require("fs");
 var bodyParser = require('body-parser');
 /** Importing my own Modules **/
-var Controller = require('./lib/controller.js')
-var FILE_ENCODING = require('./constants/contstants').FILE_ENCODING
+var Controller = require('./lib/controller.js');
+var Validator = require('./lib/schemaValidator.js');
+var FILE_ENCODING = require('./constants/contstants').FILE_ENCODING;
 
-if (require.main === module) startAsCmd()
-else module.exports = start
+if (require.main === module) startAsCmd();
+else module.exports = start;
 
 function start(configFile, callback) {
     var callback = (typeof callback === 'function') ? callback : function () { };
@@ -17,24 +18,20 @@ function start(configFile, callback) {
     if (!configFile) return callback('Missing Configuration File', null);
     
     fs.readFile(configFile, FILE_ENCODING, function (err, configAsString) {
-        //Validation
-        
-        //Config valid JSON
-        //Path to Responses exists
-        
+        //Validate Config (As valid JSON and valid Configuration)
+        if (!Validator.CONFIG(configAsString)) return console.log('Invalid Configuration File'); //TODO: Make Class with static content to send
         //Parse Config
         var config = JSON.parse(configAsString);
-        //Validate Config
-        
+        //Initialise Server
         var app = express();
         //Setup Middleware
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: false }));
         Controller.initRoutes(app, config);
-        //Initliase Server
+        //Configure Server and Start Server
         var port = config.port;
         var server = app.listen(port);
-        
+        //Return Server
         callback(null, server);
     });
 }

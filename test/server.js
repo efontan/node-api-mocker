@@ -51,7 +51,7 @@ describe('Test Server with 0% Failure Configuration', function () {
                 if (err) throw err;
                 
                 res.body.success.should.equal(true);
-                res.body.errors.should.equal([]);
+                (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
                 done()
             });
@@ -80,7 +80,7 @@ describe('Test Server with 0% Failure Configuration', function () {
         it('should return {"success": true,"errors": [ ],"result": "Hello World"}', function (done) {
             
             request(app)
-            .post('/a')
+            .post('/user/5003/find')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
@@ -88,7 +88,7 @@ describe('Test Server with 0% Failure Configuration', function () {
                 if (err) throw err;
                 
                 res.body.success.should.equal(true);
-                res.body.errors.should.equal([]);
+                (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
                 done()
             });
@@ -140,7 +140,7 @@ describe('Test Server with 0% Failure Configuration', function () {
                 if (err) throw err;
                 
                 res.body.success.should.equal(true);
-                res.body.errors.should.equal([]);
+                (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
                 done()
 
