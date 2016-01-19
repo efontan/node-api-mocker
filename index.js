@@ -5,9 +5,9 @@ var express = require('express');
 var fs = require("fs");
 var bodyParser = require('body-parser');
 /** Importing my own Modules **/
-var Controller = require('../lib/controller.js');
-var Validator = require('../lib/schemaValidator.js');
-var FILE_ENCODING = require('../constants/contstants').FILE_ENCODING;
+var Controller = require('./lib/controller.js');
+var Validator = require('./lib/schemaValidator.js');
+var FILE_ENCODING = require('./constants/contstants').FILE_ENCODING;
 
 if (require.main === module) startAsCmd();
 else module.exports = start;
