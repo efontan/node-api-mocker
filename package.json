@@ -27,7 +27,7 @@
     "url": "https://github.com/Templum/node-api-mocker"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec --reporter nyan"
   },
   "version": "0.0.4"
 }
