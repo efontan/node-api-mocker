@@ -26,7 +26,7 @@
     <Compile Include="constants\contstants.js" />
     <Content Include="configuration_test\config.json" />
     <Compile Include="lib\schemaValidator.js" />
-    <Compile Include="lib\controller.js" />
+    <Compile Include="lib\server-controller.js" />
     <Compile Include="test\server.js" />
   </ItemGroup>
   <ItemGroup>
