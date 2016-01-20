@@ -16,6 +16,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="test\validation.js" />
     <Content Include=".travis.yml" />
     <Content Include="configuration_test\responses\error.json" />
     <Content Include="configuration_test\responses\extraError.json" />

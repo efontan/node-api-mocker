@@ -1,14 +1,14 @@
-var should = require('should')
-var request = require('supertest')
-var start = require('../index')
+var should = require('should');
+var request = require('supertest');
+var start = require('../index');
 
-var app = undefined
+var app = undefined;
 
 
-describe('Test Server with 0% Failure Configuration', function () {
+describe('Test Server with 0% Failure Configuration: ', function () {
     before(function (done) {
         start('configuration_test/config.json', function (err, server) {
-            if (err) throw err;
+            if (err) done(err);
             else {
                 app = server;
                 done();
@@ -32,7 +32,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.should.be.ok();
                 done();
@@ -46,7 +46,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
@@ -66,7 +66,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.should.be.ok();
                 done();
@@ -80,7 +80,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
@@ -100,7 +100,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.should.be.ok();
                 done();
@@ -116,7 +116,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
@@ -136,7 +136,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.should.be.ok();
                 done();
@@ -152,7 +152,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
@@ -172,7 +172,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(201)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 else done();
             });
         });
@@ -188,7 +188,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(201)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 else done();
             });
         });
@@ -204,7 +204,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.should.be.ok();
                 done();
@@ -219,7 +219,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
@@ -240,7 +240,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.should.be.ok();
                 done();
@@ -255,7 +255,7 @@ describe('Test Server with 0% Failure Configuration', function () {
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function (err, res) {
-                if (err) throw err;
+                if (err) done(err);
                 
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
