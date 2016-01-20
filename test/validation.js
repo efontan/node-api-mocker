@@ -7,6 +7,8 @@ var configIsRight = JSON.stringify({ "port": 3001, "responsePath": "C:\\Users\\s
 var portIsNull = JSON.stringify({ "port" : null, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
 var portIsString = JSON.stringify({ "port" : "error", "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
 var portIsDouble = JSON.stringify({ "port" : 3.2, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
+var portIsToHigh = JSON.stringify({ "port" : 65536, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
+var portIsToLow = JSON.stringify({ "port" : -1, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
 
 var pathIsNumber = JSON.stringify({ "port" : 3001, "responsePath": 123, "requestFailQuote": 50 });
 var pathIsNull = JSON.stringify({ "port" : 3001, "responsePath": null, "requestFailQuote": 50 });
@@ -38,11 +40,13 @@ describe('Schema Validation: ', function () {
         });
 
         describe('Invalid Port Values', function () {
-            it('should return false', function (){
+            it('should return false', function () {
                 Validation.CONFIG(portIsNull).should.equal(false);
                 Validation.CONFIG(portIsString).should.equal(false);
                 Validation.CONFIG(portIsDouble).should.equal(false);
-            })
+                Validation.CONFIG(portIsToHigh).should.equal(false);
+                Validation.CONFIG(portIsToLow).should.equal(false);
+            });
         });
 
         describe('Invalid Path Values', function () {

@@ -51,7 +51,7 @@ describe('Test Server with 0% Failure Configuration: ', function () {
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
-                done()
+                done();
             });
 
         });
@@ -85,7 +85,7 @@ describe('Test Server with 0% Failure Configuration: ', function () {
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
-                done()
+                done();
             });
 
         });
@@ -121,7 +121,7 @@ describe('Test Server with 0% Failure Configuration: ', function () {
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
-                done()
+                done();
             });
 
         });
@@ -157,7 +157,7 @@ describe('Test Server with 0% Failure Configuration: ', function () {
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
-                done()
+                done();
             });
 
         });
@@ -224,7 +224,7 @@ describe('Test Server with 0% Failure Configuration: ', function () {
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
-                done()
+                done();
 
             })
 
@@ -260,7 +260,7 @@ describe('Test Server with 0% Failure Configuration: ', function () {
                 res.body.success.should.equal(true);
                 (typeof res.body.errors).should.equal(typeof ([]));
                 res.body.result.should.equal('Hello World');
-                done()
+                done();
 
             })
 
