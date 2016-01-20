@@ -1,8 +1,12 @@
 # Node-Api-Mocker
 
+![Travis CI](https://travis-ci.org/Templum/node-api-mocker.svg?branch=master)
+![Dependencies](https://david-dm.org/Templum/node-api-mocker.svg)
+[![npm downloads](https://img.shields.io/npm/dm/node-api-mocker.svg?style=flat-square)]
+
 You can include this module either in your application usuing ``` require('node-api-mocker); ``` or as comand line tool. Further information on the usages can be found in the usages section.
 #### Version
-0.0.3  [@NPM](https://www.npmjs.com/package/node-api-mocker)
+0.0.4  [@NPM](https://www.npmjs.com/package/node-api-mocker)
 #### Constributor
 [Templum](https://github.com/Templum/)
 #### Tech
