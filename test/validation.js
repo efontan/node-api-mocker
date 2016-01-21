@@ -1,4 +1,5 @@
-﻿var Validation = require('../lib/schemaValidator.js');
+﻿process.env['mocha-unfunk-style'] = 'html';
+var Validation = require('../lib/schemaValidator.js');
 var should = require('should');
 
 

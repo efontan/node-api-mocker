@@ -13,7 +13,13 @@
     "express": "4.9.0"
   },
   "description": "Node-Api-Mocker will enable you to mock REST API, as the name already suggests. You will be able to configure different paths including status and responses, also error responses. Further reading on how to use and how to configure you can see in the sections below. ",
-  "keywords": [ "REST", "API MOCKING", "REST API", "MOCKUP SERVER", "DEVELOPMENT" ],
+  "keywords": [
+    "REST",
+    "API MOCKING",
+    "REST API",
+    "MOCKUP SERVER",
+    "DEVELOPMENT"
+  ],
   "devDependencies": {
     "mocha": "2.3.4",
     "should": "8.1.1",
@@ -27,7 +33,7 @@
     "url": "https://github.com/Templum/node-api-mocker"
   },
   "scripts": {
-    "test": "mocha -R spec --reporter nyan"
+    "test": "mocha -R nyan"
   },
   "version": "0.0.5"
 }

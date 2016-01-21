@@ -1,6 +1,5 @@
 # Node-Api-Mocker
 
-![Travis CI](https://travis-ci.org/Templum/node-api-mocker.svg?branch=master)
 ![Dependencies](https://david-dm.org/Templum/node-api-mocker.svg)
 ![npm downloads](https://img.shields.io/npm/dm/node-api-mocker.svg?style=flat-square)
 

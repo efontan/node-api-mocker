@@ -1,3 +1,5 @@
+process.env['mocha-unfunk-style'] = 'html';
+
 var should = require('should');
 var request = require('supertest');
 var start = require('../index');
