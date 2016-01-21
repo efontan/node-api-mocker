@@ -5,7 +5,7 @@
 
 You can include this module either in your application usuing ``` require('node-api-mocker); ``` or as comand line tool. Further information on the usages can be found in the usages section.
 #### Version
-0.0.5  [@NPM](https://www.npmjs.com/package/node-api-mocker)
+0.0.6  [@NPM](https://www.npmjs.com/package/node-api-mocker)
 #### Constributor
 [Templum](https://github.com/Templum/)
 #### Tech
@@ -133,9 +133,9 @@ Clone repository and setup a pull request once you added a feature.
 ### Todos
 
  - Test for schemaValidator
+ - Test for fail Quote
  - Create standalone tool which generates config.json
  - Logging of the request and used parameter
- - Add in support for random error using the failureQoute 
  - See what comes up
 
 License
