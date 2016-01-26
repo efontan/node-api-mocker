@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var Controller = require('./lib/controller.js');
 var Validator = require('./lib/schemaValidator.js');
 var FILE_ENCODING = require('./constants/contstants').FILE_ENCODING;
+var ERROR = require('./constants/contstants.js').ERROR;
 
 if (require.main === module) startAsCmd();
 else module.exports = start;
@@ -19,7 +20,7 @@ function start(configFile, callback) {
     
     fs.readFile(configFile, FILE_ENCODING, function (err, configAsString) {
         //Validate Config (As valid JSON and valid Configuration)
-        if (!Validator.CONFIG(configAsString)) return console.log('Invalid Configuration File'); //TODO: Make Class with static content to send
+        if (!Validator.CONFIG(configAsString)) return console.log(ERROR.Invalid_Config);
         //Parse Config
         var config = JSON.parse(configAsString);
         //Initialise Server
@@ -37,7 +38,7 @@ function start(configFile, callback) {
 }
 
 function startAsCmd() {
-    if (process.argv.length !== 3) console.log('Example Usage: node node-api-mocker path_to_config_file'); //TODO: Make Class with static content to send 
+    if (process.argv.length !== 3) console.log('Example Usage: node node-api-mocker path_to_config_file');
     else start(process.argv[2], function (err, server) {
         if (err) console.log(err);
         console.log('Node-Api-Mocker is listening on port: ', server.address().port);

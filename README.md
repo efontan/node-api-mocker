@@ -133,7 +133,7 @@ Clone repository and setup a pull request once you added a feature.
 ### Todos
 
  - Test for schemaValidator
- - Test for fail Quote
+ - Test for failquote
  - Create standalone tool which generates config.json
  - Logging of the request and used parameter
  - See what comes up
