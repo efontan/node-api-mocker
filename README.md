@@ -38,10 +38,10 @@ The mock server will log all incomming requests. You can view them in terminal o
 Following two gifs which shows both options.
 
 ####WebPanel
-![webPanel](__misc/webPanelDemo.gif)  
+![webPanel](https://github.com/bluejamesbond/Scribe.js/blob/master/__misc/webPanelDemo.gif)  
 
 ####Terminal
-![terminal](__misc/terminalDemo.png)  
+![terminal](https://github.com/bluejamesbond/Scribe.js/blob/master/__misc/terminalDemo.png)  
 
 
 ----
