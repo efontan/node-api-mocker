@@ -5,12 +5,13 @@
 
 You can include this module either in your application usuing ``` require('node-api-mocker); ``` or as comand line tool. Further information on the usages can be found in the usages section.
 #### Version
-0.0.6  [@NPM](https://www.npmjs.com/package/node-api-mocker)
+0.0.7  [@NPM](https://www.npmjs.com/package/node-api-mocker)
 #### Constributor
 [Templum](https://github.com/Templum/)
 #### Tech
 Node-Api-Mocker uses a number of open source projects to work:
 * [Express](http://expressjs.com/) - fast node.js network app framework
+* [Scribe.js](https://github.com/bluejamesbond/Scribe.js) - log framework for node.js, which also feature webpanel
 * [Mocha](https://mochajs.org/) - well established node.js test framework
 * [Should](https://github.com/shouldjs/should.js) - BDD style assertion libary for node.js
 * [Supertest](https://github.com/visionmedia/supertest) - Super-agent driven library for testing node.js HTTP servers
@@ -33,6 +34,17 @@ if(err) //Server was not started
 else //Server was started
 });
 ```
+The mock server will log all incomming requests. You can view them in terminal or in an webpanel. To visit the webpanel just browse to http://youraddress.domain:port/logs.
+Following two gifs which shows both options.
+
+####WebPanel
+![webPanel](__misc/webPanelDemo.gif)  
+
+####Terminal
+![terminal](__misc/terminalDemo.png)  
+
+
+----
 
 #### Example for config.json
 ```json
@@ -128,14 +140,14 @@ else //Server was started
 ## Development
 Want to contribute? Great!
 
-Clone repository and setup a pull request once you added a feature.
+Feel free to clone and set up pull request. Or send issue reports.
 
 ### Todos
 
  - Test for schemaValidator
  - Test for failquote
  - Create standalone tool which generates config.json
- - Logging of the request and used parameter
+ - Logging of used parameter and body
  - See what comes up
 
 License

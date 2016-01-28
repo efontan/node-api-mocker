@@ -22,6 +22,12 @@ describe('Test Server with 0% Failure Configuration: ', function () {
         true.should.equal(true);
     });
     
+    it('should have an addres of', function () {
+        //At least for my local device
+        app.address().address.should.equal('::');
+        app.address().family.should.equal('IPv6'); 
+    });
+
     it('should start the server at port 3001', function () {
         app.address().port.should.equal(3001);
     });
