@@ -23,7 +23,7 @@ function start(configFile, callback) {
     
     fs.readFile(configFile, FILE_ENCODING, function (err, configAsString) {
         //Validate Config (As valid JSON and valid Configuration)
-        if (!Validator.CONFIG(configAsString)) return console.log(ERROR.Invalid_Config);
+        if (!Validator.CONFIG(configAsString)) return callback(ERROR.Invalid_Config, null);
         //Parse Config
         var config = JSON.parse(configAsString);
         //Initialise Server
@@ -46,7 +46,7 @@ function start(configFile, callback) {
 function startAsCmd() {
     if (process.argv.length !== 3) console.log('Example Usage: node node-api-mocker path_to_config_file');
     else start(process.argv[2], function (err, server) {
-        if (err) console.log(err);
+        if (err) return console.tag('Server Exception').date().log(err);
         console.tag('Server Information').date().log('Node-Api-Mocker is listening on port: ', server.address().port);
         console.tag('Server Information').date().log('Used Configuration File is: ', process.argv[2]);
         console.tag('Server Information').date().log('All logs can be found under http://youraddress:port/logs');
