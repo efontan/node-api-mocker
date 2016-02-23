@@ -3,6 +3,7 @@
 /** Importing needed Modules **/
 var express = require('express');
 var fs = require("fs");
+var jsonfile = require('jsonfile');
 var scribe = require("scribe-js")(); //Load Scribe
 var bodyParser = require('body-parser');
 /** Importing my own Modules **/
@@ -21,26 +22,28 @@ function start(configFile, callback) {
     
     if (!configFile) return callback('Missing Configuration File', null);
     
-    fs.readFile(configFile, FILE_ENCODING, function (err, configAsString) {
-        //Validate Config (As valid JSON and valid Configuration)
-        if (!Validator.CONFIG(configAsString)) return callback(ERROR.Invalid_Config, null);
-        //Parse Config
-        var config = JSON.parse(configAsString);
-        //Initialise Server
-        var app = express();
-        //Setup Middleware
-        app.use(bodyParser.json());
-        app.use(bodyParser.urlencoded({ extended: false }));
-        app.use(scribe.express.logger()); //Log each request
 
-        app.use('/logs', scribe.webPanel());
-        Controller.initRoutes(app, config);
-        //Configure Server and Start Server
-        var port = config.port;
-        var server = app.listen(port);
-        //Return Server
-        callback(null, server);
-    });
+    //Validate Config (As valid JSON and valid Configuration)
+    if (!Validator.CONFIG(configFile)) return callback(ERROR.Invalid_Config, null);
+    
+
+    //Parse Config
+    var config = jsonfile.readFileSync(configFile);
+    
+    //Initialise Server
+    var app = express();
+    //Setup Middleware
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(scribe.express.logger()); //Log each request
+    
+    app.use('/logs', scribe.webPanel());
+    Controller.initRoutes(app, config);
+    //Configure Server and Start Server
+    var port = config.port;
+    var server = app.listen(port);
+    //Return Server
+    callback(null, server);
 }
 
 function startAsCmd() {

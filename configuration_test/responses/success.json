@@ -1,7 +1,5 @@
 {
    "success":true,
-   "errors":[
-
-   ],
+   "errors":[],
    "result":"Hello World"
 }

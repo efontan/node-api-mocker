@@ -1,9 +1,8 @@
-﻿process.env['mocha-unfunk-style'] = 'html';
-var Validation = require('../lib/schemaValidator.js');
+﻿var Validation = require('../lib/schemaValidator.js');
 var should = require('should');
 
 
-var configIsRight = JSON.stringify({ "port": 3001, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
+var configIsRight = JSON.stringify({ "port": 3001, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50, "paths": [{ "method": "GET", "path": "/user/:variable/find", "successResponse": { "filename": "success.json", "status": 200 }, "errorResponses": [] }] });
 
 var portIsNull = JSON.stringify({ "port" : null, "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
 var portIsString = JSON.stringify({ "port" : "error", "responsePath": "C:\\Users\\simon\\Source\\Repos\\node-api-mocker\\configuration_test\\responses\\", "requestFailQuote": 50 });
