@@ -17,6 +17,12 @@ var console = process.console; //create a local (for the module) console
 if (require.main === module) startAsCmd();
 else module.exports = start;
 
+/**
+ * Starts the mock server with the given config
+ * 
+ * @param {string} configFile The path to the used config file
+ * @param {function} callback The callback which is called when the server is started
+ */
 function start(configFile, callback) {
     var callback = (typeof callback === 'function') ? callback : function () { };
     
@@ -46,6 +52,9 @@ function start(configFile, callback) {
     callback(null, server);
 }
 
+/**
+ * Starts the server via command line. And displays information regarding the server start.
+ */
 function startAsCmd() {
     if (process.argv.length !== 3) console.log('Example Usage: node node-api-mocker path_to_config_file');
     else start(process.argv[2], function (err, server) {
