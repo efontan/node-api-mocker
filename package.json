@@ -1,46 +1,38 @@
 {
   "author": {
     "name": "Simon Pelczer",
-    "email": "simonpelczer@web.de"
+    "email": "simonpelczer@outlook.de"
   },
   "license": "MIT",
   "bin": {
-    "node-api-mocker": "index.js"
+    "node-api-mocker": "./lib/index.js"
   },
   "bugs": "https://github.com/Templum/node-api-mocker/issues",
   "dependencies": {
-    "body-parser": "1.8.1",
-    "express": "4.9.0",
+    "body-parser": "1.15.2",
+    "express": "4.14.0",
     "scribe-js": "2.0.4",
-    "jsonfile": "2.2.3"
+    "jsonschema": "1.1.0"
   },
-  "description": "Node-Api-Mocker will enable you to mock REST API, as the name already suggests. You will be able to configure different paths including status and responses, also error responses. Further reading on how to use and how to configure you can see in the sections below. ",
+  "description": "Will follow soon!",
   "keywords": [
+    "Rest",
     "REST",
-    "API MOCKING",
-    "REST API",
-    "MOCKUP SERVER",
-    "DEVELOPMENT",
-    "DEVOPS",
-    "REST API MOCKING",
-    "MOCK UP SERVER",
-    "LOGGING",
-    "API SIMULATION",
-    "FAKE API",
-    "API MOCKING"
+    "Restfull Service",
+    "Api Mocking",
+    "Mockserver",
+    "Mockup Server",
+    "Testing",
+    "Development",
+    "Api mocking"
   ],
   "devDependencies": {
     "@types/body-parser": "0.0.33",
-    "@types/express": "4.0.33",
-    "@types/mocha": "2.2.32",
-    "@types/should": "8.1.30",
-    "@types/supertest": "1.1.31",
-    "@types/node": "6.0.45",
-    "mocha": "2.3.4",
-    "should": "8.1.1",
-    "supertest": "1.1.0"
+    "@types/express": "^4.0.33",
+    "@types/jsonschema": "0.0.4",
+    "@types/node": "6.0.45"
   },
-  "main": "index",
+  "main": "/lib/index.js",
   "name": "node-api-mocker",
   "private": false,
   "repository": {
@@ -48,7 +40,9 @@
     "url": "https://github.com/Templum/node-api-mocker"
   },
   "scripts": {
-    "test": "mocha -R list"
+    "start": "node ./lib/index.js",
+    "test": "mocha -R list",
+    "debug": "node ./lib/index.js D:\\Entwicklung\\Projekte\\NodeJs\\node-api-mocker\\test\\test-confs\\correct.conf.json"
   },
   "version": "0.1.1"
 }
