@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "1.15.2",
     "express": "4.14.0",
-    "scribe-js": "2.0.4",
+    "morgan": "1.7.0",
     "jsonschema": "1.1.0"
   },
   "description": "Will follow soon!",
@@ -30,6 +30,7 @@
     "@types/body-parser": "0.0.33",
     "@types/express": "^4.0.33",
     "@types/jsonschema": "0.0.4",
+    "@types/morgan": "^1.7.32",
     "@types/node": "6.0.45"
   },
   "main": "/lib/index.js",
@@ -42,7 +43,7 @@
   "scripts": {
     "start": "node ./lib/index.js",
     "test": "mocha -R list",
-    "debug": "node ./lib/index.js D:\\Entwicklung\\Projekte\\NodeJs\\node-api-mocker\\test\\test-confs\\correct.conf.json"
+    "debug": "node ./lib/index.js D:/Entwicklung/Projekte/NodeJs/node-api-mocker/test/test-confs/correct.conf.json"
   },
   "version": "0.1.1"
 }
