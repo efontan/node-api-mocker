@@ -1,7 +1,7 @@
 {
     "global_conf": {
         "port": 1377,
-        "failing-rate": 80
+        "failing_rate": 80
     },
     "routes": [
         {
