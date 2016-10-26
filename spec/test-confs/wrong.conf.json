@@ -1,0 +1,29 @@
+{
+    "global_conf": {
+        "port": 1337,
+        "failing_rate": 80
+    },
+    "routes": [
+        {
+            "method": "get",
+            "path": "/example/test",
+            "sucess": [
+                {
+                    "status": 200
+                }
+            ],
+            "error": [
+                {
+                    "status": "404",
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.test.not.found"
+                        ],
+                        "message": "Given test was not found"
+                    }
+                }
+            ]
+        }
+    ]
+}
