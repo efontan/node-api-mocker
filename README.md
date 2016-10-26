@@ -11,6 +11,86 @@
 Node-Api-Mocker is a node module which allow you to simulate a rest service / rest api. You can define the api as you like using a conf.json, sample can be found in `/spec/test-conf/`. You can configure a port on which the server will listen and also an fail rate for request. This feature enables you to test server error which your normally should not receive. Like internal errors or similar things.
 Node-Api-Mocker is so designed that you can either use it via command line or require it. Which makes it an ideal tool for testing. And usages during development.
 
+Schema for the conf.json:
+```json 
+{
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+            "global_conf": {
+                "type": "object",
+                "properties": {
+                    "port": {
+                        "type": "integer"
+                    },
+                    "failing_rate": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "routes": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "method": {
+                            "type": "string"
+                        },
+                        "path": {
+                            "type": "string"
+                        },
+                        "sucess": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "integer"
+                                    },
+                                    "body": {
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+                                    "status",
+                                    "body"
+                                ]
+                            }
+                        },
+                        "error": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "integer"
+                                    },
+                                    "body": {
+                                        "type": "object"
+                                    }
+                                },
+                                "required": [
+                                    "status",
+                                    "body"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "method",
+                        "path",
+                        "sucess",
+                        "error"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "global_conf",
+            "routes"
+        ]
+    }
+```
 
 ## Constributor
 [Templum](https://github.com/Templum/)
@@ -57,7 +137,12 @@ $ node-api-mocker path/to/config/file.json
 
 ## Changelog
 
-Starts with upcoming version
+1.0.0 
+* Added Schema for config.json 
+* Restructured Project
+* Removed on validation solution for the conf.json
+* Errors regarding server start now dont get catched
+* Bugfixes
 
 ## Development
 Want to contribute? Great!
