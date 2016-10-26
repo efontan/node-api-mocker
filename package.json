@@ -29,9 +29,13 @@
   "devDependencies": {
     "@types/body-parser": "0.0.33",
     "@types/express": "^4.0.33",
+    "@types/istanbul": "^0.4.29",
+    "@types/jasmine": "^2.5.35",
     "@types/jsonschema": "0.0.4",
     "@types/morgan": "^1.7.32",
-    "@types/node": "6.0.45"
+    "@types/node": "6.0.45",
+    "istanbul": "0.4.5",
+    "jasmine": "2.5.2"
   },
   "main": "/lib/index.js",
   "name": "node-api-mocker",
@@ -42,8 +46,7 @@
   },
   "scripts": {
     "start": "node ./lib/index.js",
-    "test": "mocha -R list",
-    "debug": "node ./lib/index.js D:/Entwicklung/Projekte/NodeJs/node-api-mocker/test/test-confs/correct.conf.json"
+    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
   },
   "version": "0.1.1"
 }
