@@ -2,15 +2,14 @@ engines:
   rubocop:
     enabled: true
   brakeman:
-   	enabled: true
+    enabled: true
   eslint:
     enabled: true
   duplication:
-  	enabled: true
-    config:
-    	languages:
-      	#mass_threshold: 30
-      - javascript
+    enabled: true
+  config:
+    languages:
+     - javascript
 ratings:
   paths:
   - lib/**
