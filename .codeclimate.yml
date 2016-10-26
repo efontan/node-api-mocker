@@ -4,8 +4,6 @@ engines:
     config:
       languages:
       - javascript
-  todo:
-    enabled: true
 ratings:
   paths:
   - "lib/"
