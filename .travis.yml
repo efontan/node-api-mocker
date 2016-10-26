@@ -1,0 +1,14 @@
+language: node_js
+
+node_js:
+  - "7.0.0" # Latest
+  - "6.9.1" # Current
+  - "4.6.1" # Last
+
+before_script:
+  - npm install -g jasmine
+  - npm install -g istanbul
+  - npm install -g codeclimate-test-reporter
+  - npm install
+script:
+  - npm test
