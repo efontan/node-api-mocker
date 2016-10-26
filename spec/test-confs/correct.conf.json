@@ -1,7 +1,7 @@
 {
     "global_conf": {
         "port": 1337,
-        "failing_rate": 80
+        "failing_rate": 0
     },
     "routes": [
         {
@@ -14,6 +14,92 @@
                         "success": true,
                         "errors": [],
                         "message": "Hello World"
+                    }
+                }
+            ],
+            "error": [
+                {
+                    "status": 404,
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.test.not.found"
+                        ],
+                        "message": "Given test was not found"
+                    }
+                }
+            ]
+        },
+        {
+            "method": "put",
+            "path": "/example/test",
+            "sucess": [
+                {
+                    "status": 201,
+                    "body": {
+                        "success": true,
+                        "errors": []
+                    }
+                }
+            ],
+            "error": [
+                {
+                    "status": 400,
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.wrong.data"
+                        ],
+                        "message": "Given request was bad"
+                    }
+                },
+                {
+                    "status": 401,
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.not.loged.in"
+                        ],
+                        "message": "Missing api key"
+                    }
+                }
+            ]
+        },
+        {
+            "method": "post",
+            "path": "/example/test",
+            "sucess": [
+                {
+                    "status": 200,
+                    "body": {
+                        "success": true,
+                        "errors": [],
+                        "message": "Inserted hello world"
+                    }
+                }
+            ],
+            "error": [
+                {
+                    "status": 418,
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.make.tea"
+                        ],
+                        "message": "I am special"
+                    }
+                }
+            ]
+        },
+        {
+            "method": "delete",
+            "path": "/example/test",
+            "sucess": [
+                {
+                    "status": 200,
+                    "body": {
+                        "success": true,
+                        "errors": []
                     }
                 }
             ],

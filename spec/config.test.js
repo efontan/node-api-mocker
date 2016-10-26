@@ -8,7 +8,7 @@ describe("Testing config reader", function () {
         expect(ConfReader.routes.length).not.toBe(0);
 
         expect(ConfReader.config.port).toBe(1337);
-        expect(ConfReader.config.fail).toBe(80);
+        expect(ConfReader.config.fail).toBe(0);
     });
 
     it("should fallback to use the default values, when none are provided in the config", function () {
