@@ -1,6 +1,7 @@
 # Node-Api-Mocker
 
 [![npm downloads](https://img.shields.io/npm/dm/node-api-mocker.svg?style=flat-square)](https://www.npmjs.com/package/node-api-mocker)
+[![Build Status](https://travis-ci.org/Templum/node-api-mocker.svg?branch=master)](https://travis-ci.org/Templum/node-api-mocker)
 [![Inline docs](http://inch-ci.org/github/Templum/node-api-mocker.svg?branch=master&style=shields)](http://inch-ci.org/github/Templum/node-api-mocker)
 [![Code Climate](https://codeclimate.com/github/Templum/node-api-mocker/badges/gpa.svg)](https://codeclimate.com/github/Templum/node-api-mocker)
 [![Test Coverage](https://codeclimate.com/github/Templum/node-api-mocker/badges/coverage.svg)](https://codeclimate.com/github/Templum/node-api-mocker/coverage)
