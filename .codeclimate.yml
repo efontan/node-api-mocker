@@ -1,17 +1,13 @@
 engines:
-  rubocop:
-    enabled: true
-  brakeman:
-    enabled: true
-  eslint:
-    enabled: true
   duplication:
     enabled: true
-  config:
-    languages:
-     - javascript
+    config:
+      languages:
+      - javascript
+  todo:
+    enabled: true
 ratings:
   paths:
-  - lib/**
+  - "lib/"
 exclude_paths:
-- test/**/*
+- test/
