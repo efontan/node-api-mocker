@@ -7,7 +7,7 @@
         {
             "method": "get",
             "path": "/example/test",
-            "sucess": [
+            "success": [
                 {
                     "status": 200,
                     "body": {
@@ -33,7 +33,7 @@
         {
             "method": "put",
             "path": "/example/test",
-            "sucess": [
+            "success": [
                 {
                     "status": 201,
                     "body": {
@@ -68,7 +68,7 @@
         {
             "method": "post",
             "path": "/example/test",
-            "sucess": [
+            "success": [
                 {
                     "status": 200,
                     "body": {
@@ -94,7 +94,7 @@
         {
             "method": "delete",
             "path": "/example/test",
-            "sucess": [
+            "success": [
                 {
                     "status": 200,
                     "body": {

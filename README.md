@@ -39,7 +39,7 @@ Schema for the conf.json:
                         "path": {
                             "type": "string"
                         },
-                        "sucess": {
+                        "success": {
                             "type": "array",
                             "items": {
                                 "type": "object",
@@ -79,7 +79,7 @@ Schema for the conf.json:
                     "required": [
                         "method",
                         "path",
-                        "sucess",
+                        "success",
                         "error"
                     ]
                 }
