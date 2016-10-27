@@ -141,7 +141,7 @@ $ node-api-mocker path/to/config/file.json
 * Added Schema for config.json 
 * Restructured Project
 * Removed on validation solution for the conf.json
-* Errors regarding server start now dont get catched
+* Errors regarding server start now don't get caught
 * Bugfixes
 
 ## Development
