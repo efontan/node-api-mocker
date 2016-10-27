@@ -14,81 +14,81 @@ Node-Api-Mocker is so designed that you can either use it via command line or re
 Schema for the conf.json:
 ```json 
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "global_conf": {
-      "type": "object",
-      "properties": {
-        "port": {
-          "type": "integer"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "global_conf": {
+            "type": "object",
+            "properties": {
+                "port": {
+                    "type": "integer"
+                },
+                "failing_rate": {
+                    "type": "integer"
+                }
+            }
         },
-        "failing_rate": {
-          "type": "integer"
+        "routes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "method": {
+                        "type": "string"
+                    },
+                    "path": {
+                        "type": "string"
+                    },
+                    "success": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer"
+                                },
+                                "body": {
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "status",
+                                "body"
+                            ]
+                        }
+                    },
+                    "error": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "integer"
+                                },
+                                "body": {
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "status",
+                                "body"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "method",
+                    "path",
+                    "success",
+                    "error"
+                ]
+            }
         }
-      }
     },
-    "routes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "method": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "success": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "status": {
-                  "type": "integer"
-                },
-                "body": {
-                  "type": "object"
-                }
-              },
-              "required": [
-                "status",
-                "body"
-              ]
-            }
-          },
-          "error": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "status": {
-                  "type": "integer"
-                },
-                "body": {
-                  "type": "object"
-                }
-              },
-              "required": [
-                "status",
-                "body"
-              ]
-            }
-          }
-        },
-        "required": [
-          "method",
-          "path",
-          "success",
-          "error"
-        ]
-      }
-    }
-  },
-  "required": [
-    "global_conf",
-    "routes"
-  ]
+    "required": [
+        "global_conf",
+        "routes"
+    ]
 }
 ```
 
