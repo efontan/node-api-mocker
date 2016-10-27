@@ -57,14 +57,21 @@ describe("Testing mock server with zero failing rate", function () {
 
         // local server with config that has a 100% failing rate, port 1338 (1337 is already in use)
         Controller.init('spec/test-confs/failing.conf.json');
-        Controller.buildServer((e, s) => { localServer = s; testFail() });
+        Controller.buildServer((e, s) => {
+            localServer = s;
+            {
+                request(localServer)
+                    .get('/example/test')
+                    .set('Accept', 'application/json')
+                    .expect(404, {
+                        success: false,
+                        errors: ['com.example.failing'],
+                        message: 'Failing rate is 100'
+                    }, done);
 
-        function testFail() {
-            request(localServer)
-                .get('/example/test')
-                .set('Accept', 'application/json')
-                .expect(404, {success: false, errors: ['com.example.failing'], message: 'Failing rate is 100'}, done);
-        }
+                // TODO close localServer? localServer = undefined;
+            }
+        });
     });
 
 });
