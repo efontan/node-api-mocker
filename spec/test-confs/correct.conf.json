@@ -58,7 +58,7 @@
                     "body": {
                         "success": false,
                         "errors": [
-                            "com.example.not.loged.in"
+                            "com.example.not.logged.in"
                         ],
                         "message": "Missing api key"
                     }
