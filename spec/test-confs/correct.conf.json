@@ -115,6 +115,31 @@
                     }
                 }
             ]
+        },
+        {
+            "method": "UnknownHTTPVerb",
+            "path": "/example/test",
+            "success": [
+                {
+                    "status": 200,
+                    "body": {
+                        "success": true,
+                        "errors": []
+                    }
+                }
+            ],
+            "error": [
+                {
+                    "status": 404,
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.test.not.found"
+                        ],
+                        "message": "Given test was not found"
+                    }
+                }
+            ]
         }
     ]
 }
