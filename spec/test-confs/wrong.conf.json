@@ -7,7 +7,7 @@
         {
             "method": "get",
             "path": "/example/test",
-            "sucess": [
+            "success": [
                 {
                     "status": 200
                 }

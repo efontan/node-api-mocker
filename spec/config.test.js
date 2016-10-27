@@ -21,7 +21,7 @@ describe("Testing config reader", function () {
         expect(ConfReader.config.fail).toBe(0);
     });
 
-    it("should throw an exception, when file does not exsist", function () {
+    it("should throw an exception, when file does not exist", function () {
         var path = 'does/not/exist/file.json';
         expect(() => ConfReader.readIn(path)).toThrow(new Error('The given file does not exist'));
     });
