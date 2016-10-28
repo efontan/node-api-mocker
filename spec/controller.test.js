@@ -1,15 +1,17 @@
 const Controller = require('../lib/controller');
-const PATH = 'spec/test-confs/correct.conf.json';
+const SUCCESS_CONFIG = 'spec/test-confs/correct.conf.json';
+const FAILING_CONFIG = 'spec/test-confs/failing.conf.json';
 const request = require('supertest');
 
-describe("Testing mock server with zero failing rate", function () {
+describe("Testing mock server with 0% failing rate", function () {
     var server = undefined;
     beforeAll(function (done) {
-        Controller.init(PATH);
+        Controller.init(SUCCESS_CONFIG);
         Controller.buildServer((e, s) => { server = s; done() });
     });
 
     afterAll(function () {
+        server.close();
         server = undefined;
     });
 
@@ -52,26 +54,32 @@ describe("Testing mock server with zero failing rate", function () {
             .expect(200, { success: true, errors: [] }, done);
     });
 
-    it('server should serve the configured content for get requests', function (done) {
-        var localServer = undefined;
+});
 
-        // local server with config that has a 100% failing rate, port 1338 (1337 is already in use)
-        Controller.init('spec/test-confs/failing.conf.json');
-        Controller.buildServer((e, s) => {
-            localServer = s;
-            {
-                request(localServer)
-                    .get('/example/test')
-                    .set('Accept', 'application/json')
-                    .expect(404, {
-                        success: false,
-                        errors: ['com.example.failing'],
-                        message: 'Failing rate is 100'
-                    }, done);
-
-                // TODO close localServer? localServer = undefined;
-            }
-        });
+describe("Testing mock server with 100% failing rate", function () {
+    var server = undefined;
+    beforeAll(function (done) {
+        Controller.init(FAILING_CONFIG);
+        Controller.buildServer((e, s) => { server = s; done() });
     });
 
+    afterAll(function () {
+        server.close();
+        server = undefined;
+    });
+
+    it('server should have started', function () {
+        expect(server).not.toBe(undefined);
+    });
+
+    it('server should serve the configured content for get requests', function (done) {
+        request(server)
+            .get('/example/test')
+            .set('Accept', 'application/json')
+            .expect(404, {
+                success: false,
+                errors: ['com.example.failing'],
+                message: 'Failing rate is 100'
+            }, done);
+    });
 });
