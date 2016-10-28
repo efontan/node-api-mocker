@@ -81,8 +81,17 @@ describe("Testing selectRandomElement", function () {
     });
 
     it("should return either a or b", function () {
-        var result = UTIL.selectRandomElement(['a', 'b']);
-        expect(result === 'a' || result === 'b').toBe(true);
+        var result1 = '';
+        var result2 = '';
+
+        // this may not be the nicest way to test this but it will guaranty branch coverage
+        while (result1 !== 'a') {
+            result1 = UTIL.selectRandomElement(['a', 'b']);
+        }
+        while (result2 !== 'b') {
+            result2 = UTIL.selectRandomElement(['a', 'b']);
+        }
+        expect(result1 === 'a' && result2 === 'b').toBe(true);
     });
 
 });

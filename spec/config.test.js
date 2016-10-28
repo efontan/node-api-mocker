@@ -1,4 +1,4 @@
-const ConfReader = require('../lib/util/conf-reader')
+const ConfReader = require('../lib/util/conf-reader');
 
 describe("Testing config reader", function () {
     it("should read in a valid config", function () {

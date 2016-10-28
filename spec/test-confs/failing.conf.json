@@ -1,0 +1,34 @@
+{
+    "global_conf": {
+        "port": 1338,
+        "failing_rate": 100
+    },
+    "routes": [
+        {
+            "method": "get",
+            "path": "/example/test",
+            "success": [
+                {
+                    "status": 200,
+                    "body": {
+                        "success": true,
+                        "errors": [],
+                        "message": "Hello World"
+                    }
+                }
+            ],
+            "error": [
+                {
+                    "status": 404,
+                    "body": {
+                        "success": false,
+                        "errors": [
+                            "com.example.failing"
+                        ],
+                        "message": "Failing rate is 100"
+                    }
+                }
+            ]
+        }
+    ]
+}
