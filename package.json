@@ -50,5 +50,5 @@
     "start": "node ./lib/index.js",
     "test": "istanbul cover node_modules/jasmine/bin/jasmine.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
